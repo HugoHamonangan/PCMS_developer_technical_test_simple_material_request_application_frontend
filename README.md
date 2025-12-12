@@ -43,3 +43,43 @@ password: Pa$$w0rd!
 REQUESTER ROLE
 email: requester1@company.com
 password: Pa$$w0rd!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+
+Documentantion and discussion that help me make this frontend
+
+https://ui.shadcn.com/docs/components/form
+
+https://nextjs.org/docs/app/api-reference/functions/cookies
+
+https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie
+
+https://lucide.dev/guide/packages/lucide-react
+
+https://ui.shadcn.com/docs/components/sidebar
+
+https://stackoverflow.com/questions/71706064/react-18-hydration-failed-because-the-initial-ui-does-not-match-what-was-render
+
+https://nextjs.org/docs/pages/building-your-application/routing/dynamic-routes
+
+https://zustand.docs.pmnd.rs/integrations/persisting-store-data
+
+https://stackoverflow.com/questions/10730362/get-cookie-by-name
+
+https://github.com/shadcn-ui/ui/issues/7036
