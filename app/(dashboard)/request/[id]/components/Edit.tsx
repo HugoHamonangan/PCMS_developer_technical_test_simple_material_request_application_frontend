@@ -81,7 +81,7 @@ const EditPage = ({ id }: Props) => {
   };
 
   return (
-    <div className="flex items-center justify-center h-full max-w-lg mx-auto w-full overflow-y-auto bg-neutral-950 px-4 py-8">
+    <div className="flex items-center justify-center h-full max-w-lg mx-auto w-full overflow-y-auto  px-4 py-8">
       <div className="w-full max-w-2xl mx-auto">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -97,7 +97,7 @@ const EditPage = ({ id }: Props) => {
                     <Input
                       placeholder="Type project name"
                       {...field}
-                      className="bg-neutral-900 border border-neutral-800 text-neutral-100 placeholder:text-neutral-600 text-base font-light py-2 px-4 focus:border-neutral-700 focus:ring-0 transition-colors"
+                      className=" placeholder:text-neutral-600 text-base font-light py-2 px-4 focus:border-neutral-700 focus:ring-0 transition-colors"
                     />
                   </FormControl>
                   <FormMessage className="text-xs text-red-400 mt-2 font-light" />
@@ -115,27 +115,18 @@ const EditPage = ({ id }: Props) => {
                   </FormLabel>
                   <Select value={field.value} onValueChange={field.onChange}>
                     <FormControl>
-                      <SelectTrigger className="w-full bg-neutral-900 border border-neutral-800 text-neutral-100 text-base font-light py-2 px-4 focus:border-neutral-700 focus:ring-0 transition-colors">
+                      <SelectTrigger className="w-full  text-base font-light py-2 px-4 focus:border-neutral-700 focus:ring-0 transition-colors">
                         <SelectValue placeholder="Select priority level" />
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent className="bg-neutral-900 border border-neutral-800">
-                      <SelectItem
-                        value="LOW"
-                        className="text-neutral-100 font-light focus:bg-neutral-800 focus:text-neutral-100"
-                      >
+                    <SelectContent className="">
+                      <SelectItem value="LOW" className="font-light ">
                         <span className="text-xs tracking-wider">LOW</span>
                       </SelectItem>
-                      <SelectItem
-                        value="MEDIUM"
-                        className="text-neutral-100 font-light focus:bg-neutral-800 focus:text-neutral-100"
-                      >
+                      <SelectItem value="MEDIUM" className="font-light ">
                         <span className="text-xs tracking-wider">MEDIUM</span>
                       </SelectItem>
-                      <SelectItem
-                        value="HIGH"
-                        className="text-neutral-100 font-light focus:bg-neutral-800 focus:text-neutral-100"
-                      >
+                      <SelectItem value="HIGH" className="font-light ">
                         <span className="text-xs tracking-wider">HIGH</span>
                       </SelectItem>
                     </SelectContent>
@@ -157,7 +148,7 @@ const EditPage = ({ id }: Props) => {
                     <Textarea
                       placeholder="Add notes or special requirements"
                       {...field}
-                      className="bg-neutral-900 border border-neutral-800 text-neutral-100 placeholder:text-neutral-600 text-base font-light py-4 px-4 min-h-32 focus:border-neutral-700 focus:ring-0 transition-colors resize-none"
+                      className=" placeholder:text-neutral-600 text-base font-light py-4 px-4 min-h-32 focus:border-neutral-700 focus:ring-0 transition-colors resize-none"
                     />
                   </FormControl>
                   <FormMessage className="text-xs text-red-400 mt-2 font-light" />
@@ -165,7 +156,7 @@ const EditPage = ({ id }: Props) => {
               )}
             />
 
-            <div className="pt-6 border-t border-neutral-800">
+            <div className="pt-6 border-t">
               <Button
                 type="submit"
                 variant={'outline'}

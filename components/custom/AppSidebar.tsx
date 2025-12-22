@@ -56,11 +56,7 @@ export function AppSidebar() {
               {items.map((item) => (
                 <SidebarMenuItem
                   key={item.title}
-                  className={
-                    pathname === item.url
-                      ? 'bg-zinc-700 rounded-lg text-accent-foreground'
-                      : ''
-                  }
+                  className={pathname === item.url ? 'rounded-lg' : ''}
                 >
                   <SidebarMenuButton asChild>
                     <Link href={item.url}>

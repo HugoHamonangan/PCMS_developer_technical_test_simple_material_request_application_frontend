@@ -100,7 +100,7 @@ const EditRequestDetail = ({ id }: Props) => {
                     <Input
                       placeholder="Enter material code"
                       {...field}
-                      className="bg-neutral-900 border border-neutral-800 text-neutral-100 placeholder:text-neutral-600"
+                      className=" text-neutral-100 placeholder:text-neutral-600"
                     />
                   </FormControl>
                   <FormMessage className="text-xs text-red-400" />
@@ -120,7 +120,7 @@ const EditRequestDetail = ({ id }: Props) => {
                     <Textarea
                       placeholder="Enter material description"
                       {...field}
-                      className="bg-neutral-900 border border-neutral-800 text-neutral-100 min-h-24"
+                      className=" text-neutral-100 min-h-24"
                     />
                   </FormControl>
                   <FormMessage className="text-xs text-red-400" />
@@ -141,7 +141,7 @@ const EditRequestDetail = ({ id }: Props) => {
                       type="number"
                       placeholder="0"
                       {...field}
-                      className="bg-neutral-900 border border-neutral-800 text-neutral-100"
+                      className=" text-neutral-100"
                     />
                   </FormControl>
                   <FormMessage className="text-xs text-red-400" />
@@ -161,7 +161,7 @@ const EditRequestDetail = ({ id }: Props) => {
                     <Input
                       placeholder="pcs, box, kg..."
                       {...field}
-                      className="bg-neutral-900 border border-neutral-800 text-neutral-100 uppercase"
+                      className=" text-neutral-100 uppercase"
                     />
                   </FormControl>
                   <FormMessage className="text-xs text-red-400" />
@@ -181,7 +181,7 @@ const EditRequestDetail = ({ id }: Props) => {
                     <Input
                       placeholder="e.g., Electrical, Mechanical..."
                       {...field}
-                      className="bg-neutral-900 border border-neutral-800 text-neutral-100"
+                      className=" text-neutral-100"
                     />
                   </FormControl>
                   <FormMessage className="text-xs text-red-400" />
@@ -201,7 +201,7 @@ const EditRequestDetail = ({ id }: Props) => {
                     <Textarea
                       placeholder="Optional technical details"
                       {...field}
-                      className="bg-neutral-900 border border-neutral-800 text-neutral-100 min-h-24"
+                      className=" text-neutral-100 min-h-24"
                     />
                   </FormControl>
                   <FormMessage className="text-xs text-red-400" />
@@ -221,7 +221,7 @@ const EditRequestDetail = ({ id }: Props) => {
                     <Input
                       placeholder="Brand name"
                       {...field}
-                      className="bg-neutral-900 border border-neutral-800 text-neutral-100"
+                      className=" text-neutral-100"
                     />
                   </FormControl>
                   <FormMessage className="text-xs text-red-400" />
@@ -241,7 +241,7 @@ const EditRequestDetail = ({ id }: Props) => {
                     <Textarea
                       placeholder="Additional notes"
                       {...field}
-                      className="bg-neutral-900 border border-neutral-800 text-neutral-100 min-h-16"
+                      className=" text-neutral-100 min-h-16"
                     />
                   </FormControl>
                   <FormMessage className="text-xs text-red-400" />

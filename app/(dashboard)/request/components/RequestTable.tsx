@@ -3,11 +3,17 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { useRequestsQuery } from '@/hooks/query/useRequestsQuery';
 import { GetRequestType } from '@/services/requestApi';
-import { useQueryClient } from '@tanstack/react-query';
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from '@/components/ui/pagination';
 import moment from 'moment-timezone';
 import { useRouter } from 'next/navigation';
-
-import { useEffect } from 'react';
 
 interface RequestTableProps {
   search: string;
@@ -26,65 +32,88 @@ const requestTable = ({ search }: RequestTableProps) => {
 
   return (
     <>
-      <table className="w-full border-collapse bg-neutral-950 text-neutral-100 min-w-160">
-        <thead>
-          <tr className="border-b border-neutral-800">
-            {header.map((head) => (
-              <th
-                key={head}
-                className="py-4 px-6 text-left text-xs font-normal tracking-widest uppercase text-neutral-400"
-              >
-                {head}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
+      <div className="w-full min-w-160  overflow-y-auto">
+        <div className="grid grid-cols-5 border-b ">
+          {header.map((head) => (
+            <div
+              key={head}
+              className="py-4 px-6 text-left text-xs font-normal tracking-widest uppercase "
+            >
+              {head}
+            </div>
+          ))}
+        </div>
+
+        <div>
           {data?.items.map((request: GetRequestType, i: number) => (
-            <tr
+            <div
               key={request.id}
               onClick={() => handleRequestClick(request.id)}
-              className="border-b border-neutral-900 hover:bg-neutral-900 transition-colors duration-50 cursor-pointer"
+              className="grid grid-cols-5 hover:bg-primary-foreground duration-50 cursor-pointer"
             >
-              <td className="py-5 px-6 text-sm font-light text-neutral-400">
+              <div className="py-5 px-6 text-sm font-light ">
                 {String(i + 1).padStart(2, '0')}
-              </td>
-              <td className="py-5 px-6 text-base font-light">
+              </div>
+
+              <div className="py-5 px-6 text-base font-light">
                 {moment(request.request_date)
                   .tz('Asia/Jakarta')
                   .format('DD MMM YYYY')}
-              </td>
-              <td className="py-5 px-6 text-sm font-light tracking-wide">
-                {request.request_code}
-              </td>
-              <td className="py-5 px-6 text-base font-light">
-                {request.project_name}
-              </td>
-              <td className="py-5 px-6">
-                <div
-                  className={
-                    'text-xs text-neutral-400 bg-neutral-800 px-3 py-1.5 rounded-sm flex items-center gap-2 w-fit '
-                  }
-                >
-                  <span
-                    className={`text-xs size-2 rounded-full ${
-                      request.status === 'SUBMITTED'
-                        ? 'bg-green-700 text-white shadow-green-100'
-                        : request.status === 'APPROVED'
-                        ? 'bg-blue-700 text-white shadow-blue-100'
-                        : request.status === 'REJECTED'
-                        ? 'bg-red-700 text-white shadow-red-100'
-                        : 'bg-neutral-800 text-neutral-400 shadow-neutral-700'
-                    }`}
-                  ></span>
+              </div>
 
+              <div className="py-5 px-6 text-sm font-light tracking-wide">
+                {request.request_code}
+              </div>
+
+              <div className="py-5 px-6 text-base font-light">
+                {request.project_name}
+              </div>
+
+              <div className="py-5 px-6">
+                <div className="text-xs px-3 py-1.5 rounded-sm flex items-center gap-2 w-fit">
+                  <span
+                    className={`size-2 rounded-full ${
+                      request.status === 'SUBMITTED'
+                        ? 'bg-green-700'
+                        : request.status === 'APPROVED'
+                        ? 'bg-blue-700'
+                        : request.status === 'REJECTED'
+                        ? 'bg-red-700'
+                        : 'bg-neutral-700'
+                    }`}
+                  />
                   {request.status}
                 </div>
-              </td>
-            </tr>
+              </div>
+            </div>
           ))}
-        </tbody>
-      </table>
+        </div>
+      </div>
+
+      <Pagination>
+        <PaginationContent>
+          <PaginationItem>
+            <PaginationPrevious href="#" />
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#">1</PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#" isActive>
+              2
+            </PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#">3</PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationEllipsis />
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationNext href="#" />
+          </PaginationItem>
+        </PaginationContent>
+      </Pagination>
     </>
   );
 };

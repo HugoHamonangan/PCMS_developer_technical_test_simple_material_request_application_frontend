@@ -9,11 +9,11 @@ const Page = () => {
   const { user } = useAuthStore();
 
   return (
-    <div className=" bg-neutral-950 p-8">
+    <div className="  p-8">
       <div className="max-w-7xl mx-auto">
         <div className="mb-10 border-b border-neutral-800 pb-8">
           <div className="flex flex-col mb-2">
-            <h1 className="text-3xl font-light tracking-tight text-neutral-100">
+            <h1 className="text-3xl font-light tracking-tight ">
               Simple Material Request Application Professional Test Case
             </h1>
             <br />

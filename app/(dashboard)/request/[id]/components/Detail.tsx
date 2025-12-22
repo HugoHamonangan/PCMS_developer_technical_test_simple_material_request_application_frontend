@@ -15,20 +15,20 @@ const Detail = ({
 
   return (
     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-1">
-      <span className="font-medium text-neutral-400">{label}</span>
+      <span className="font-medium ">{label}</span>
 
       {children ? (
         children
       ) : badgeColor ? (
         <span
-          className={`text-sm px-3 py-1 rounded-full ${badgeColor} text-white font-semibold uppercase`}
+          className={`text-sm px-3 py-1 rounded-full ${badgeColor}  font-semibold uppercase`}
         >
           {value}
         </span>
       ) : isMultiline ? (
-        <p className="text-white whitespace-pre-line">{value}</p>
+        <p className=" whitespace-pre-line">{value}</p>
       ) : (
-        <span className="text-white">{value}</span>
+        <span className="">{value}</span>
       )}
     </div>
   );

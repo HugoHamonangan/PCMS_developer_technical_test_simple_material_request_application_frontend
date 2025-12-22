@@ -94,7 +94,7 @@ const Page = () => {
   const item = data?.item;
 
   return isLoading ? (
-    <div className="flex items-center justify-center h-full text-white text-xl font-medium">
+    <div className="flex items-center justify-center h-full text-xl font-medium">
       <Loader2 className="size-14 animate-spin text-neutral-300" />
     </div>
   ) : error ? (
@@ -102,13 +102,11 @@ const Page = () => {
   ) : !item ? (
     <div className="text-neutral-400">No data found</div>
   ) : (
-    <div className="p-8 bg-zinc-950 max-w-7xl mx-auto text-white font-sans w-full">
+    <div className="p-8  max-w-7xl mx-auto font-sans w-full">
       <div className="flex pb-6 border-b items-center justify-between flex-wrap gap-4">
         <div className="flex flex-col gap-1.5 ">
-          <span className="text-neutral-500">Project Name</span>
-          <h1 className="text-3xl tracking-tight text-neutral-100 ">
-            {item.project_name}
-          </h1>
+          <span className="">Project Name</span>
+          <h1 className="text-3xl tracking-tight ">{item.project_name}</h1>
         </div>
         <div className="flex items-center gap-2 flex-wrap">
           <Button
@@ -171,16 +169,16 @@ const Page = () => {
             <Detail label="Priority" value={item.priority}>
               <div
                 className={
-                  'text-xs text-neutral-400 bg-neutral-800 px-3 py-1.5 rounded-sm flex items-center gap-2 w-fit '
+                  'text-xs  px-3 py-1.5 rounded-sm flex items-center gap-2 w-fit '
                 }
               >
                 <span
                   className={`text-xs size-2 rounded-full ${
                     item.priority === 'HIGH'
-                      ? 'bg-red-700 text-white shadow-red-100'
+                      ? 'bg-red-700 shadow-red-100'
                       : item.priority === 'MEDIUM'
-                      ? 'bg-amber-700 text-white shadow-amber-100'
-                      : 'bg-green-700 text-white shadow-green-100'
+                      ? 'bg-amber-700 shadow-amber-100'
+                      : 'bg-green-700 shadow-green-100'
                   }`}
                 ></span>
 
@@ -192,17 +190,17 @@ const Page = () => {
             <Detail label="Status" value={item.status}>
               <div
                 className={
-                  'text-xs text-neutral-400 bg-neutral-800 px-3 py-1.5 rounded-sm flex items-center gap-2 w-fit '
+                  'text-xs  px-3 py-1.5 rounded-sm flex items-center gap-2 w-fit '
                 }
               >
                 <span
                   className={`text-xs size-2 rounded-full ${
                     item.status === 'SUBMITTED'
-                      ? 'bg-green-700 text-white shadow-green-100'
+                      ? 'bg-green-700 shadow-green-100'
                       : item.status === 'APPROVED'
-                      ? 'bg-blue-700 text-white shadow-blue-100'
+                      ? 'bg-blue-700 shadow-blue-100'
                       : item.status === 'REJECTED'
-                      ? 'bg-red-700 text-white shadow-red-100'
+                      ? 'bg-red-700 shadow-red-100'
                       : 'bg-neutral-800 text-neutral-400 shadow-neutral-700'
                   }`}
                 ></span>
@@ -223,7 +221,7 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6  text-neutral-400">
+      <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-4">
         <Detail
           label="Created At"
           value={moment(item.createdAt)
@@ -265,10 +263,8 @@ const Page = () => {
       <div className="flex flex-col py-6 border-b ">
         <div className="flex sm:items-center  justify-between sm:flex-row flex-col gap-4 ">
           <div className="flex flex-col gap-0.5 ">
-            <span className="text-2xl tracking-tight text-neutral-100 ">
-              Request Details
-            </span>
-            <span className="text-neutral-500 text-sm">
+            <span className="text-2xl tracking-tight ">Request Details</span>
+            <span className=" text-sm">
               Add request items and quantities as needed.
             </span>
           </div>
@@ -280,7 +276,7 @@ const Page = () => {
             <DrawerContent>
               <DrawerHeader>
                 <DrawerTitle>
-                  <span className="text-3xl pt-2 font-light tracking-tight text-neutral-100">
+                  <span className="text-3xl pt-2 font-light tracking-tight">
                     Edit Request Form
                   </span>
                 </DrawerTitle>
@@ -303,7 +299,7 @@ const Page = () => {
             <DrawerContent>
               <DrawerHeader>
                 <DrawerTitle>
-                  <span className="text-3xl pt-2 font-light tracking-tight text-neutral-100">
+                  <span className="text-3xl pt-2 font-light tracking-tight">
                     Material Request Detail Form
                   </span>
                 </DrawerTitle>
@@ -335,7 +331,7 @@ const Page = () => {
               <AlertDialogAction asChild>
                 <Button
                   variant="destructive"
-                  className="bg-red-600 hover:bg-red-700 text-white cursor-pointer focus:ring-red-500"
+                  className="bg-red-600 hover:bg-red-700 cursor-pointer focus:ring-red-500"
                   onClick={() => onDeleteRequest()}
                 >
                   Yes, Delete It

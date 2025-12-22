@@ -50,10 +50,10 @@ const AddRequestPage = () => {
   };
 
   return (
-    <div className="flex items-center justify-center  bg-neutral-950 px-4 py-8">
+    <div className="flex items-center justify-center  px-4 py-8">
       <div className="w-full max-w-2xl mx-auto">
-        <div className="mb-8 border-b border-neutral-800 pb-6">
-          <h1 className="text-3xl font-light tracking-tight text-neutral-100 mb-2">
+        <div className="mb-8  pb-6">
+          <h1 className="text-3xl font-light tracking-tight  mb-2">
             New Request
           </h1>
           <p className="text-sm font-normal text-neutral-500 tracking-wide uppercase">
@@ -75,7 +75,7 @@ const AddRequestPage = () => {
                     <Input
                       placeholder="Type project name"
                       {...field}
-                      className="bg-neutral-900 border border-neutral-800 text-neutral-100 placeholder:text-neutral-600 text-base font-light py-2 px-4 focus:border-neutral-700 focus:ring-0 transition-colors"
+                      className=" border  placeholder:text-neutral-600 text-base font-light py-2 px-4 focus:border-neutral-700 focus:ring-0 transition-colors"
                     />
                   </FormControl>
                   <FormMessage className="text-xs text-red-400 mt-2 font-light" />
@@ -93,26 +93,17 @@ const AddRequestPage = () => {
                   </FormLabel>
                   <FormControl>
                     <Select value={field.value} onValueChange={field.onChange}>
-                      <SelectTrigger className="w-full bg-neutral-900 border border-neutral-800 text-neutral-100 text-base font-light py-2 px-4 focus:border-neutral-700 focus:ring-0 transition-colors">
+                      <SelectTrigger className="w-full  border  text-base font-light py-2 px-4 focus:border-neutral-700 focus:ring-0 transition-colors">
                         <SelectValue placeholder="Select priority level" />
                       </SelectTrigger>
-                      <SelectContent className="bg-neutral-900 border border-neutral-800">
-                        <SelectItem
-                          value="LOW"
-                          className="text-neutral-100 font-light focus:bg-neutral-800 focus:text-neutral-100"
-                        >
+                      <SelectContent className=" border">
+                        <SelectItem value="LOW" className=" font-light ">
                           <span className="text-xs tracking-wider">LOW</span>
                         </SelectItem>
-                        <SelectItem
-                          value="MEDIUM"
-                          className="text-neutral-100 font-light focus:bg-neutral-800 focus:text-neutral-100"
-                        >
+                        <SelectItem value="MEDIUM" className=" font-light ">
                           <span className="text-xs tracking-wider">MEDIUM</span>
                         </SelectItem>
-                        <SelectItem
-                          value="HIGH"
-                          className="text-neutral-100 font-light focus:bg-neutral-800 focus:text-neutral-100"
-                        >
+                        <SelectItem value="HIGH" className=" font-light ">
                           <span className="text-xs tracking-wider">HIGH</span>
                         </SelectItem>
                       </SelectContent>
@@ -135,7 +126,7 @@ const AddRequestPage = () => {
                     <Textarea
                       placeholder="Add notes or special requirements"
                       {...field}
-                      className="bg-neutral-900 border border-neutral-800 text-neutral-100 placeholder:text-neutral-600 text-base font-light py-4 px-4 min-h-32 focus:border-neutral-700 focus:ring-0 transition-colors resize-none"
+                      className=" border  placeholder:text-neutral-600 text-base font-light py-4 px-4 min-h-32 focus:border-neutral-700 focus:ring-0 transition-colors resize-none"
                     />
                   </FormControl>
                   <FormMessage className="text-xs text-red-400 mt-2 font-light" />
@@ -143,7 +134,7 @@ const AddRequestPage = () => {
               )}
             />
 
-            <div className="pt-6 border-t border-neutral-800">
+            <div className="pt-6 border-t">
               <Button
                 type="submit"
                 variant={'outline'}

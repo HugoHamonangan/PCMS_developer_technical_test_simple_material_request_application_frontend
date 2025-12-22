@@ -85,19 +85,19 @@ const ListRequestDetail = ({ id }: RequestDetailProps) => {
   return (
     <div className="mt-6">
       {data.items.length === 0 && (
-        <div className="text-neutral-400">No request details created yet.</div>
+        <div className="">No request details created yet.</div>
       )}
       <div className="grid gap-6">
         {details.map((item: GetRequestDetailType, index: number) => (
           <Card
             key={item.id}
             onClick={() => handleOnClick(item.id)}
-            className="border-2 border-neutral-800 cursor-pointer bg-neutral-900 hover:border-neutral-700 hover:bg-neutral-800 transition-all duration-200 overflow-hidden"
+            className=" cursor-pointer transition-all duration-200 overflow-hidden"
           >
-            <CardHeader className="text-neutral-300 px-6 pb-4 border-b-2 border-neutral-800">
+            <CardHeader className=" px-6 pb-4 ">
               <div className="flex items-start justify-between">
                 <div>
-                  <span className="text-xs font-normal tracking-widest uppercase text-neutral-100">
+                  <span className="text-xs font-normal tracking-widest uppercase ">
                     Material Code
                   </span>
                   <h3 className="text-xl font-light tracking-wide mt-1">
@@ -106,13 +106,13 @@ const ListRequestDetail = ({ id }: RequestDetailProps) => {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <span className="text-xs font-bold tracking-wider uppercase bg-neutral-950 text-neutral-100 p-3">
+                  <span className="text-xs font-bold tracking-wider uppercase   p-3">
                     {item.material_type}
                   </span>
                   <Button
                     variant="secondary"
                     size="icon"
-                    className="text-neutral-500 cursor-pointer p-5 hover:text-red-400 hover:bg-neutral-800"
+                    className="text-neutral-500 cursor-pointer p-5 hover:text-red-400 "
                     onClick={(e) => handleOnDelete(item.id, e)}
                   >
                     <Trash2 className="size-6" />
@@ -127,7 +127,7 @@ const ListRequestDetail = ({ id }: RequestDetailProps) => {
                   <dt className="text-xs font-normal tracking-widest uppercase text-neutral-500 mb-2">
                     Description
                   </dt>
-                  <dd className="text-base font-light text-neutral-100 leading-relaxed">
+                  <dd className="text-base font-light  leading-relaxed">
                     {item.material_description}
                   </dd>
                 </dl>
@@ -136,16 +136,14 @@ const ListRequestDetail = ({ id }: RequestDetailProps) => {
                   <dt className="text-xs font-normal tracking-widest uppercase text-neutral-500 mb-2">
                     Brand
                   </dt>
-                  <dd className="text-base font-light text-neutral-100">
-                    {item.brand || '—'}
-                  </dd>
+                  <dd className="text-base font-light ">{item.brand || '—'}</dd>
                 </dl>
 
                 <dl>
                   <dt className="text-xs font-normal tracking-widest uppercase text-neutral-500 mb-2">
                     Quantity
                   </dt>
-                  <dd className="text-2xl font-light text-neutral-100 tabular-nums">
+                  <dd className="text-2xl font-light  tabular-nums">
                     {item.quantity}
                     <span className="text-sm text-neutral-400 ml-2">
                       {item.unit}
@@ -157,7 +155,7 @@ const ListRequestDetail = ({ id }: RequestDetailProps) => {
                   <dt className="text-xs font-normal tracking-widest uppercase text-neutral-500 mb-2">
                     Unit of Measure
                   </dt>
-                  <dd className="text-base font-light text-neutral-100 uppercase tracking-wide">
+                  <dd className="text-base font-light  uppercase tracking-wide">
                     {item.unit}
                   </dd>
                 </dl>
@@ -167,7 +165,7 @@ const ListRequestDetail = ({ id }: RequestDetailProps) => {
                     <dt className="text-xs font-normal tracking-widest uppercase text-neutral-500 mb-2">
                       Technical Specification
                     </dt>
-                    <dd className="text-sm font-light text-neutral-100 leading-relaxed">
+                    <dd className="text-sm font-light  leading-relaxed">
                       {item.specification}
                     </dd>
                   </dl>
@@ -178,7 +176,7 @@ const ListRequestDetail = ({ id }: RequestDetailProps) => {
                     <dt className="text-xs font-normal tracking-widest uppercase text-neutral-500 mb-2">
                       Additional Notes
                     </dt>
-                    <dd className="text-sm font-light text-neutral-300 leading-relaxed">
+                    <dd className="text-sm font-light  leading-relaxed">
                       {item.notes}
                     </dd>
                   </dl>
@@ -220,7 +218,7 @@ const ListRequestDetail = ({ id }: RequestDetailProps) => {
             <AlertDialogAction asChild>
               <Button
                 variant="destructive"
-                className="bg-red-600 hover:bg-red-700 text-white cursor-pointer focus:ring-red-500"
+                className="bg-red-600 hover:bg-red-700  cursor-pointer focus:ring-red-500"
                 onClick={() => onDeleteRequestDetail()}
               >
                 Yes, Delete It
@@ -236,7 +234,7 @@ const ListRequestDetail = ({ id }: RequestDetailProps) => {
         <DrawerContent>
           <DrawerHeader>
             <DrawerTitle>
-              <span className="text-3xl pt-2 font-light tracking-tight text-neutral-100">
+              <span className="text-3xl pt-2 font-light tracking-tight">
                 Material Request Detail Form
               </span>
             </DrawerTitle>
