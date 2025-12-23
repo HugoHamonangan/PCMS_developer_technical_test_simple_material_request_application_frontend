@@ -4,6 +4,16 @@
 import { useRequestsQuery } from '@/hooks/query/useRequestsQuery';
 import { GetRequestType } from '@/services/requestApi';
 import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table';
+import {
   Pagination,
   PaginationContent,
   PaginationEllipsis,
@@ -22,7 +32,7 @@ interface RequestTableProps {
 const requestTable = ({ search }: RequestTableProps) => {
   const router = useRouter();
 
-  const header = ['No', 'Request Date', 'Code', 'Project Name', 'Status'];
+  const headers = ['No', 'Request Date', 'Code', 'Project Name', 'Status'];
 
   const { data } = useRequestsQuery(search, 0, 99);
 
@@ -31,46 +41,41 @@ const requestTable = ({ search }: RequestTableProps) => {
   };
 
   return (
-    <>
-      <div className="w-full min-w-160  overflow-y-auto">
-        <div className="grid grid-cols-5 border-b ">
-          {header.map((head) => (
-            <div
-              key={head}
-              className="py-4 px-6 text-left text-xs font-normal tracking-widest uppercase "
-            >
-              {head}
-            </div>
-          ))}
-        </div>
-
-        <div>
-          {data?.items.map((request: GetRequestType, i: number) => (
-            <div
+    <div className="mx-6 h-full flex flex-col gap-4 justify-start  min-h-0">
+      <Table>
+        <TableHeader>
+          <TableRow>
+            {headers.map((header: string) => (
+              <TableHead
+                key={header}
+                className="bg-secondary sticky top-0 px-4 py-2 font-semibold"
+              >
+                {header}
+              </TableHead>
+            ))}
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {data?.items?.map((request: GetRequestType, i: number) => (
+            <TableRow
               key={request.id}
               onClick={() => handleRequestClick(request.id)}
-              className="grid grid-cols-5 hover:bg-primary-foreground duration-50 cursor-pointer"
+              className="cursor-pointer"
             >
-              <div className="py-5 px-6 text-sm font-light ">
-                {String(i + 1).padStart(2, '0')}
-              </div>
-
-              <div className="py-5 px-6 text-base font-light">
+              <TableCell className="px-4 py-3.5"> {String(i + 1)}</TableCell>
+              <TableCell className="px-4 py-3.5">
+                {' '}
                 {moment(request.request_date)
                   .tz('Asia/Jakarta')
                   .format('DD MMM YYYY')}
-              </div>
-
-              <div className="py-5 px-6 text-sm font-light tracking-wide">
+              </TableCell>
+              <TableCell className="px-4 py-3.5">
+                {' '}
                 {request.request_code}
-              </div>
-
-              <div className="py-5 px-6 text-base font-light">
-                {request.project_name}
-              </div>
-
-              <div className="py-5 px-6">
-                <div className="text-xs px-3 py-1.5 rounded-sm flex items-center gap-2 w-fit">
+              </TableCell>
+              <TableCell>{request.project_name}</TableCell>
+              <TableCell className="px-4 py-3.5">
+                <div className="flex items-center gap-2">
                   <span
                     className={`size-2 rounded-full ${
                       request.status === 'SUBMITTED'
@@ -84,11 +89,11 @@ const requestTable = ({ search }: RequestTableProps) => {
                   />
                   {request.status}
                 </div>
-              </div>
-            </div>
+              </TableCell>
+            </TableRow>
           ))}
-        </div>
-      </div>
+        </TableBody>
+      </Table>
 
       <Pagination>
         <PaginationContent>
@@ -114,7 +119,7 @@ const requestTable = ({ search }: RequestTableProps) => {
           </PaginationItem>
         </PaginationContent>
       </Pagination>
-    </>
+    </div>
   );
 };
 

@@ -34,8 +34,8 @@ const Page = () => {
   };
 
   return (
-    <div className=" flex flex-col h-full gap-4 p-2  mx-auto w-full min-h-0">
-      <div className=" py-2 px-6 ">
+    <div className=" flex flex-col h-full gap-2 p-2 mx-auto w-full min-h-0">
+      <div className="px-6">
         <div className="flex flex-col gap-4 items-baseline justify-between md:flex-row mb-6">
           <h1 className="text-3xl font-light tracking-tight ">
             Material Request List

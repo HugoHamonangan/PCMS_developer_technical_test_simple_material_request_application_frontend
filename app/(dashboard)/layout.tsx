@@ -17,8 +17,8 @@ export default function DashboardLayout({
     <SidebarProvider>
       <AppSidebar />
 
-      <main className="w-full flex flex-col  h-[99dvh]">
-        <div className="py-3 px-4.5  w-full z-10 ">
+      <main className="w-full flex flex-col overflow-x-hidden h-[99dvh]">
+        <div className="py-3 px-4.5 w-full z-10 ">
           <div className="p-2  w-fit rounded-md cursor-pointer">
             <SidebarTrigger className="cursor-pointer" />
           </div>

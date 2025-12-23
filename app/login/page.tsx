@@ -60,7 +60,7 @@ export default function LoginForm() {
 
   return (
     <div className="flex min-h-screen items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
-      <Card className="w-full max-w-md bg-neutral-800 border-none rounded-xl shadow-2xl py-8">
+      <Card className="w-full max-w-md bg-background border-none rounded-xl shadow-2xl py-8">
         <CardHeader className="pt-8 pb-4">
           <div className="text-center text-blue-400">
             <Sparkles className="mx-auto h-8 w-8" />
@@ -88,7 +88,7 @@ export default function LoginForm() {
                       <Input
                         placeholder="yourname@example.com"
                         {...field}
-                        className="bg-gray-700 border border-gray-600 text-white placeholder:text-gray-500 "
+                        className="bg-gray-700 border placeholder:text-gray-500 "
                       />
                     </FormControl>
                     <FormMessage className="text-red-400" />
@@ -109,7 +109,7 @@ export default function LoginForm() {
                         type="password"
                         placeholder="••••••••"
                         {...field}
-                        className="bg-gray-700 border border-gray-600 text-white placeholder:text-gray-500 "
+                        className="bg-gray-700 border placeholder:text-gray-500 "
                       />
                     </FormControl>
                     <FormMessage className="text-red-400" />
