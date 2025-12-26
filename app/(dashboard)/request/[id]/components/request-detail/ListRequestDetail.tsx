@@ -161,7 +161,7 @@ const ListRequestDetail = ({ id }: RequestDetailProps) => {
                 </dl>
 
                 {item.specification && (
-                  <dl className="col-span-2 pt-3 border-t border-neutral-800">
+                  <dl className="col-span-2 pt-3 border-t">
                     <dt className="text-xs font-normal tracking-widest uppercase text-neutral-500 mb-2">
                       Technical Specification
                     </dt>
@@ -172,7 +172,7 @@ const ListRequestDetail = ({ id }: RequestDetailProps) => {
                 )}
 
                 {item.notes && (
-                  <dl className="col-span-2 pt-3 border-t border-neutral-800">
+                  <dl className="col-span-2 pt-3 border-t">
                     <dt className="text-xs font-normal tracking-widest uppercase text-neutral-500 mb-2">
                       Additional Notes
                     </dt>
@@ -183,7 +183,7 @@ const ListRequestDetail = ({ id }: RequestDetailProps) => {
                 )}
               </div>
 
-              <div className="mt-6 pt-4 border-t border-neutral-800 flex items-center justify-between">
+              <div className="mt-6 pt-4 border-t  flex items-center justify-between">
                 <p className="text-xs text-neutral-400 tracking-wide uppercase">
                   Created:{' '}
                   {moment(item.createdAt)

@@ -78,13 +78,13 @@ const EditRequestDetail = ({ id }: Props) => {
   return (
     <div className="max-w-2xl w-full mx-auto my-6 pb-4 px-4 h-full overflow-y-auto">
       {isLoading ? (
-        <div className="flex items-center justify-center h-full text-white text-xl font-medium">
+        <div className="flex items-center justify-center h-full text-xl font-medium">
           <Loader2 className="size-14 animate-spin text-neutral-300" />
         </div>
       ) : error ? (
         <div className="text-red-400">Error: {String(error)}</div>
       ) : !data?.item ? (
-        <div className="text-neutral-400">No data found</div>
+        <div className="">No data found</div>
       ) : (
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -93,14 +93,14 @@ const EditRequestDetail = ({ id }: Props) => {
               name="material_code"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-xs uppercase tracking-widest text-neutral-400">
+                  <FormLabel className="text-xs uppercase tracking-widest ">
                     Material Code
                   </FormLabel>
                   <FormControl>
                     <Input
                       placeholder="Enter material code"
                       {...field}
-                      className=" text-neutral-100 placeholder:text-neutral-600"
+                      className="  placeholder:text-neutral-600"
                     />
                   </FormControl>
                   <FormMessage className="text-xs text-red-400" />
@@ -113,14 +113,14 @@ const EditRequestDetail = ({ id }: Props) => {
               name="material_description"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-xs uppercase tracking-widest text-neutral-400">
+                  <FormLabel className="text-xs uppercase tracking-widest ">
                     Description
                   </FormLabel>
                   <FormControl>
                     <Textarea
                       placeholder="Enter material description"
                       {...field}
-                      className=" text-neutral-100 min-h-24"
+                      className="  min-h-24"
                     />
                   </FormControl>
                   <FormMessage className="text-xs text-red-400" />
@@ -133,7 +133,7 @@ const EditRequestDetail = ({ id }: Props) => {
               name="quantity"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-xs uppercase tracking-widest text-neutral-400">
+                  <FormLabel className="text-xs uppercase tracking-widest ">
                     Quantity
                   </FormLabel>
                   <FormControl>
@@ -141,7 +141,7 @@ const EditRequestDetail = ({ id }: Props) => {
                       type="number"
                       placeholder="0"
                       {...field}
-                      className=" text-neutral-100"
+                      className=" "
                     />
                   </FormControl>
                   <FormMessage className="text-xs text-red-400" />
@@ -154,14 +154,14 @@ const EditRequestDetail = ({ id }: Props) => {
               name="unit"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-xs uppercase tracking-widest text-neutral-400">
+                  <FormLabel className="text-xs uppercase tracking-widest ">
                     Unit
                   </FormLabel>
                   <FormControl>
                     <Input
                       placeholder="pcs, box, kg..."
                       {...field}
-                      className=" text-neutral-100 uppercase"
+                      className="  uppercase"
                     />
                   </FormControl>
                   <FormMessage className="text-xs text-red-400" />
@@ -174,14 +174,14 @@ const EditRequestDetail = ({ id }: Props) => {
               name="material_type"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-xs uppercase tracking-widest text-neutral-400">
+                  <FormLabel className="text-xs uppercase tracking-widest ">
                     Material Type
                   </FormLabel>
                   <FormControl>
                     <Input
                       placeholder="e.g., Electrical, Mechanical..."
                       {...field}
-                      className=" text-neutral-100"
+                      className=" "
                     />
                   </FormControl>
                   <FormMessage className="text-xs text-red-400" />
@@ -194,14 +194,14 @@ const EditRequestDetail = ({ id }: Props) => {
               name="specification"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-xs uppercase tracking-widest text-neutral-400">
+                  <FormLabel className="text-xs uppercase tracking-widest ">
                     Technical Specification (Optional)
                   </FormLabel>
                   <FormControl>
                     <Textarea
                       placeholder="Optional technical details"
                       {...field}
-                      className=" text-neutral-100 min-h-24"
+                      className="  min-h-24"
                     />
                   </FormControl>
                   <FormMessage className="text-xs text-red-400" />
@@ -214,15 +214,11 @@ const EditRequestDetail = ({ id }: Props) => {
               name="brand"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-xs uppercase tracking-widest text-neutral-400">
+                  <FormLabel className="text-xs uppercase tracking-widest ">
                     Brand (Optional)
                   </FormLabel>
                   <FormControl>
-                    <Input
-                      placeholder="Brand name"
-                      {...field}
-                      className=" text-neutral-100"
-                    />
+                    <Input placeholder="Brand name" {...field} className=" " />
                   </FormControl>
                   <FormMessage className="text-xs text-red-400" />
                 </FormItem>
@@ -234,14 +230,14 @@ const EditRequestDetail = ({ id }: Props) => {
               name="notes"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-xs uppercase tracking-widest text-neutral-400">
+                  <FormLabel className="text-xs uppercase tracking-widest ">
                     Notes (Optional)
                   </FormLabel>
                   <FormControl>
                     <Textarea
                       placeholder="Additional notes"
                       {...field}
-                      className=" text-neutral-100 min-h-16"
+                      className="  min-h-16"
                     />
                   </FormControl>
                   <FormMessage className="text-xs text-red-400" />
@@ -249,7 +245,7 @@ const EditRequestDetail = ({ id }: Props) => {
               )}
             />
 
-            <div className="pt-6 border-t border-neutral-800">
+            <div className="pt-6 border-t ">
               <Button
                 type="submit"
                 variant="outline"

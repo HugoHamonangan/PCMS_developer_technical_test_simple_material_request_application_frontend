@@ -1,9 +1,10 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
-/* @custom-variant dark (&:is(.dark *)); */
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --breakpoint-desktop-lg: 1340px;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -41,6 +42,8 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --color-button-primary: var(--button-primary);
+  --color-button-primary-text: var(--button-primary-text);
 }
 
 :root {
@@ -76,6 +79,8 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
+  --button-primary: oklch(45.237% 0.21603 265.489);
+  --button-primary-text: oklch(96.715% 0.00011 271.152);
 }
 
 .dark {
@@ -110,13 +115,51 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
+  --button-primary: oklch(37.96% 0.00693 274.791);
+  --button-primary-text: oklch(96.715% 0.00011 271.152);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    font-size: 12px;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
+  @media only screen and (min-width: 1340px) {
+    * {
+      font-size: 15px;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: revert;
+    line-height: revert;
+  }
+}
+
+.thin-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(220 10% 50%) transparent;
+}
+
+.thin-scroll::-webkit-scrollbar {
+  height: 1px !important;
+}
+
+.thin-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.thin-scroll::-webkit-scrollbar-thumb {
+  background-color: hsl(220 10% 50%);
+  border-radius: 999px;
 }

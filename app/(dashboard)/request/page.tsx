@@ -48,7 +48,7 @@ const Page = () => {
               className=" border w-fit min-w-60  placeholder:text-neutral-600 text-base font-light py-2 px-4"
             />
             <Button
-              variant="outline"
+              variant="default"
               className="cursor-pointer"
               onClick={onNavigateToAddRequest}
             >

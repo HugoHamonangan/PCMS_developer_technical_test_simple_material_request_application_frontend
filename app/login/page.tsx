@@ -88,7 +88,7 @@ export default function LoginForm() {
                       <Input
                         placeholder="yourname@example.com"
                         {...field}
-                        className="bg-gray-700 border placeholder:text-gray-500 "
+                        className=" border placeholder:text-gray-500 "
                       />
                     </FormControl>
                     <FormMessage className="text-red-400" />
@@ -109,7 +109,7 @@ export default function LoginForm() {
                         type="password"
                         placeholder="••••••••"
                         {...field}
-                        className="bg-gray-700 border placeholder:text-gray-500 "
+                        className=" border placeholder:text-gray-500 "
                       />
                     </FormControl>
                     <FormMessage className="text-red-400" />
