@@ -146,7 +146,7 @@ const requestTable = ({ search }: RequestTableProps) => {
         </Table>
       </div>
 
-      <div className="flex items-center justify-between ">
+      <div className="flex items-center justify-between sm:flex-row flex-col gap-2">
         <Select
           value={pageSize}
           onValueChange={(value) => {
