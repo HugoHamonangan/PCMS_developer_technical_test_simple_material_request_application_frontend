@@ -57,6 +57,7 @@ const EditPage = ({ id }: Props) => {
 
   useEffect(() => {
     if (data) {
+      console.log(data);
       form.reset({
         project_name: data.item.project_name,
         priority: data.item.priority,

@@ -3,17 +3,17 @@
 'use client';
 
 import RequestTable from './components/RequestTable';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { PlusIcon } from 'lucide-react';
 import { redirect } from 'next/navigation';
 
 import debounce from 'lodash.debounce';
 import { useCallback, useState } from 'react';
+import RequestHeader from './components/RequestHeader';
 
 const Page = () => {
   const [searchValue, setSearchValue] = useState('');
   const [query, setQuery] = useState('');
+  const [pageSize, setPageSize] = useState('10');
+  const [page, setPage] = useState(0);
 
   const onNavigateToAddRequest = () => {
     redirect('/request/add');
@@ -22,44 +22,34 @@ const Page = () => {
   const handleSearch = useCallback(
     debounce((value: string) => {
       setQuery(value);
+      setPage(0);
     }, 200),
     []
   );
 
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-
+  const onChange = (value: string) => {
     setSearchValue(value);
     handleSearch(value);
   };
 
   return (
     <div className=" flex flex-col h-full gap-2 p-2 mx-auto w-full min-h-0">
-      <div className="px-6">
-        <div className="flex flex-col gap-4 items-baseline justify-between md:flex-row mb-6">
-          <h1 className="text-3xl font-light tracking-tight ">
-            Material Request List
-          </h1>
-          <div className="flex gap-2 items-center flex-wrap">
-            <Input
-              placeholder="Search requests..."
-              onChange={onChange}
-              value={searchValue}
-              className=" border w-fit min-w-60  placeholder:text-neutral-600 text-base font-light py-2 px-4"
-            />
-            <Button
-              variant="default"
-              className="cursor-pointer"
-              onClick={onNavigateToAddRequest}
-            >
-              <PlusIcon />
-              Add Request
-            </Button>
-          </div>
-        </div>
-      </div>
+      <RequestHeader
+        searchValue={searchValue}
+        onSearchChange={onChange}
+        onNavigateToAddRequest={onNavigateToAddRequest}
+      />
 
-      <RequestTable search={query} />
+      <RequestTable
+        search={query}
+        page={page}
+        pageSize={pageSize}
+        onPageChange={setPage}
+        onPageSizeChange={(v) => {
+          setPageSize(v);
+          setPage(0);
+        }}
+      />
     </div>
   );
 };
